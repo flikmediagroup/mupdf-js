@@ -9,8 +9,9 @@ import { Stream } from "stream";
 const MUPDF_VERSION = "1.17.0";
 
 async function main() {
-  // await clearTmpDirectory();
-  // await downloadMuPdf();
+  await clearTmpDirectory();
+  await downloadMuPdf();
+  await applyMuPdfPatch();
   await runDockerBuildCommand();
 }
 
@@ -30,6 +31,19 @@ function downloadMuPdf() {
     needle.get(getMuPdfUrl()).pipe(tar.stdin);
     tar.on("exit", () => {
       console.log("MuPDF downloaded");
+      res();
+    });
+  });
+}
+
+function applyMuPdfPatch() {
+  return new Promise((res) => {
+    console.log("Applying MuPdf source patches...");
+    const patch = spawn("patch", ["-p0", "-i", "./overrides/mupdf.diff"]);
+    patch.stdout.pipe(process.stderr);
+    patch.stderr.pipe(process.stderr);
+    patch.on("exit", () => {
+      console.log("MuPDF source patches applied");
       res();
     });
   });

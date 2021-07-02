@@ -1,0 +1,17 @@
+--- tmp/mupdf-1.17.0-source/source/fitz/document.c	2020-05-05 14:29:09.000000000 +0300
++++ tmp/mupdf-1.17.0-source/source/fitz/document.c	2021-07-02 17:36:42.160776500 +0300
+@@ -222,7 +222,13 @@
+ fz_document *
+ fz_open_document(fz_context *ctx, const char *filename)
+ {
+-	return fz_open_accelerated_document(ctx, filename, NULL);
++	fz_try(ctx)
++	{
++		return fz_open_accelerated_document(ctx, filename, NULL);
++	}
++	fz_catch(ctx)
++	{
++	}
+ }
+ 
+ void fz_save_accelerator(fz_context *ctx, fz_document *doc, const char *accel)
