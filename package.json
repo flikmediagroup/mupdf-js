@@ -1,5 +1,5 @@
 {
-  "name": "@inderes/mupdf-js",
+  "name": "@cahva/mupdf-js",
   "version": "1.1.5",
   "description": "MuPDF compiled to WebAssembly",
   "main": "dist/index.js",
