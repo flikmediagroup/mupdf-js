@@ -1,4 +1,9 @@
-# 📰 MuPDF.js 
+# 📰 MuPDF.js
+
+### !!! This npm package is a fork of [mupdf-js](https://github.com/andytango/mupdf-js) with PR's merged from https://github.com/anthrax63/mupdf-js !!!
+
+---
+
 This is a port of [MuPDF](https://mupdf.com/docs/) to javascript and webassembly, giving you the following:
 
 - 🔥 **Blazing fast** rendering of PDFs to **PNG**, **SVG** and even **HTML**
