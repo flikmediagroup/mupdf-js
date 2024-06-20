@@ -2,6 +2,7 @@
 
 ### !!! This npm package is a fork of [mupdf-js](https://github.com/andytango/mupdf-js) with PR's merged from https://github.com/anthrax63/mupdf-js !!!
 
+### !!! ARCHIVED ON 20.6.2024. Reason is that this does not compile with later nodejs versions (>16). It's better to use [the official MuPDF library](https://www.npmjs.com/package/mupdf). !!! 
 ---
 
 This is a port of [MuPDF](https://mupdf.com/docs/) to javascript and webassembly, giving you the following:
